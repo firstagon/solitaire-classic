@@ -271,10 +271,17 @@ body {
   min-height: var(--card-height);
 }
 
-.place .card:first-child {
-  margin: 0;
+.place {
+  position: relative;
 }
+/* .place .card:first-child {
+  position: relative;
+  margin: 0;
+} */
 
 .place .card {
-  margin-top: calc(var(--card-height) * -1);
+  /* margin-top: calc(var(--card-height) * -1); */
+  position: absolute;
+  top: 0;
+  left: 0;
 }

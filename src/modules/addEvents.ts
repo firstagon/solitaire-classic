@@ -121,6 +121,13 @@ function addEvents(card: any, renderBoard: Function, currentGame: any) {
           to.push(...items);
           renderBoard();
         }
+        if (!accepted) {
+          activeCards.forEach((el: any) => {
+            el.obj.rerender();
+          });
+          activeCards = [];
+          return;
+        }
       }
 
       if (accepter.className.indexOf("place") > -1) {
@@ -142,6 +149,13 @@ function addEvents(card: any, renderBoard: Function, currentGame: any) {
           }
           to.push(...items);
           renderBoard();
+        }
+        if (!accepted) {
+          activeCards.forEach((el: any) => {
+            el.obj.rerender();
+          });
+          activeCards = [];
+          return;
         }
       }
     }

@@ -13,19 +13,11 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
-      // {
-      //   test: /\.css$/,
-      //   use: ['style-loader', 'css-loader'],
-      // },
       {
-        // If you enable `experiments.css` or `experiments.futureDefaults`, please uncomment line below
-        // type: "javascript/auto",
         test: /\.(sa|sc|c)ss$/i,
         use: [
           devMode ? "style-loader" : MiniCssExtractPlugin.loader,
           "css-loader",
-          // "postcss-loader",
-          // "sass-loader",
         ],
       },
     ],
@@ -35,17 +27,14 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'build'),
   },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'solitair',
-      // template: 'src/custom.html' 
     }),
-    // new MiniCssExtractPlugin(),
   ].concat(devMode ? [] : [new MiniCssExtractPlugin()]),
   devServer: {
-    // contentBase: 'dist',
     static: path.join(__dirname, "dist"),
     compress: true,
     port: 3000,

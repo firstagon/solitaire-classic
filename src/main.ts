@@ -112,9 +112,8 @@ const renderBoard = () => {
         el.removeClass("deckaOpen");
         el.render(place);
         const parent = <HTMLElement>el.parent;
-        parent.style.zIndex = index + 10 + "";
+        parent.style.zIndex = index + 1 +'';
         (parent as any).style["margin-bottom"] = 0;
-        console.log(typeof el.parent);
       });
     }
   })();
